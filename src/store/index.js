@@ -1,9 +1,20 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  state: {
+    numbers: "",
+  },
+  mutations: {
+    setNumbers(state, numbers) {
+      state.numbers = numbers;
+    },
+  },
+  actions: {
+    updateNumbers({ commit }, numbers) {
+      commit("setNumbers", numbers);
+    },
+  },
+  getters: {
+    getNumbers: (state) => state.numbers,
+  },
 });
